@@ -11,4 +11,7 @@
 
 !*/Makefile
 
+### Mac specific
+.DS_Store
+
 
