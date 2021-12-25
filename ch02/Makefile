@@ -5,7 +5,7 @@
 # in the chapter 
 #
 
-all: cp1 who1 who2 who3
+all: cp1 who1 who2 who3 dump_utmpx
 
 clean:
 	rm -f cp1 who1 who2 who3
@@ -15,6 +15,9 @@ cp1: cp1.c
 
 who1: who1.c 
 	cc -o who1 who1.c 
+
+dump_utmpx: dump_utmpx.c 
+	cc -o dump_utmpx dump_utmpx.c 
 
 who2: who2.c 
 	cc -o who2 who2.c 
