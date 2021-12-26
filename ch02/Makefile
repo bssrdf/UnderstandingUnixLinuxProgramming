@@ -5,11 +5,7 @@
 # in the chapter 
 #
 
-<<<<<<< HEAD
-all: cp1 who1 who2 who3 dump_utmpx
-=======
 all: cp1 who1 who2 who3 who4
->>>>>>> 2d904f14dc08f6c054dd36311931dc1b6eba2ea6
 
 clean:
 	rm -f cp1 who1 who2 who3
