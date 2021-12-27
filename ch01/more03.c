@@ -92,7 +92,8 @@ void do_more( FILE *fp )
 					reply = pagelen;		/* how many to show	*/
 					break;
 				}
-				if ( c == '\n' ){		/* Enter key => 1 line	*/
+				//if ( c == '\n' ){		/* Enter key => 1 line	*/
+				if ( c == '\r' ){		/* Enter key => 1 line	*/
 					reply = 1;	
 					break;
 				}	
@@ -129,6 +130,7 @@ ttySetRaw(int fd, struct termios *prevTermios)
                            input processing, and echoing */
 
     t.c_iflag &= ~(BRKINT | ICRNL | IGNBRK | IGNCR | INLCR |
+    //t.c_iflag &= ~(BRKINT | ICRNL | IGNBRK | INLCR |
                       INPCK | ISTRIP | IXON | PARMRK);
                         /* Disable special handling of CR, NL, and BREAK.
                            No 8th-bit stripping or parity error handling.
