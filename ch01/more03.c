@@ -92,8 +92,8 @@ void do_more( FILE *fp )
 					reply = pagelen;		/* how many to show	*/
 					break;
 				}
-				//if ( c == '\n' ){		/* Enter key => 1 line	*/
-				if ( c == '\r' ){		/* Enter key => 1 line	*/
+				if ( c == '\n' ){		/* Enter key => 1 line	*/
+                                        /* in fact Enter key is translated to NL */
 					reply = 1;	
 					break;
 				}	
@@ -129,8 +129,10 @@ ttySetRaw(int fd, struct termios *prevTermios)
                         /* Noncanonical mode, disable signals, extended
                            input processing, and echoing */
 
-    t.c_iflag &= ~(BRKINT | ICRNL | IGNBRK | IGNCR | INLCR |
-    //t.c_iflag &= ~(BRKINT | ICRNL | IGNBRK | INLCR |
+    //t.c_iflag &= ~(BRKINT | ICRNL | IGNBRK | IGNCR | INLCR |
+    /* keep ICRNL flag on so carriage return can be interpreted as new line and
+      \n is accepted as new line*/
+    t.c_iflag &= ~(BRKINT | IGNBRK | IGNCR | INLCR |
                       INPCK | ISTRIP | IXON | PARMRK);
                         /* Disable special handling of CR, NL, and BREAK.
                            No 8th-bit stripping or parity error handling.
