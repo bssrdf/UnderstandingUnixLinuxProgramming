@@ -5,7 +5,7 @@
 # in the chapter 
 #
 
-all: cp1 who1 who2 who3 who4
+all: cp1 who1 who2 who3 who4 wc1 wc2 wc3
 
 clean:
 	rm -f cp1 who1 who2 who3
@@ -27,4 +27,13 @@ who3: who3.c utmplib.c
 
 who4: who4.c 
 	cc -o who4 who4.c 
+
+wc1: wc1.c 
+	cc -O3 -o wc1 wc1.c 
+
+wc2: wc2.c 
+	cc -O3 -march=native -o wc2 wc2.c 
+
+wc3: wc3.c 
+	cc -O3 -o wc3 wc3.c 
 
