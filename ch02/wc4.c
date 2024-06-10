@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
     int lines;
     count_file(argv[1], &lines);
 
-    printf("%d %d %d %s\n", lines, argv[1]);
+    printf("%d %s\n", lines, argv[1]);
 
     return EXIT_SUCCESS;
 }
