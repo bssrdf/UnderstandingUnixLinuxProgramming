@@ -5,7 +5,7 @@
 # in the chapter 
 #
 
-all: cp1 who1 who2 who3 who4 wc1 wc2 wc3
+all: cp1 who1 who2 who3 who4 wc1 wc3 wc4 wc2
 
 clean:
 	rm -f cp1 who1 who2 who3
@@ -36,4 +36,6 @@ wc2: wc2.c
 
 wc3: wc3.c 
 	cc -O3 -o wc3 wc3.c 
+wc4: wc4.c 
+	cc -O3 -o wc4 wc4.c 
 
